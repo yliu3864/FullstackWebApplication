@@ -1,0 +1,20 @@
+<form *ngIf="log" #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
+    <input type="text" name="Header" #Header="ngModel"[(ngModel)]="songService.selectedSong.Header" placeholder="Header" >
+      <input type="text" name="Title"#Title="ngModel" [(ngModel)]="songService.selectedSong.Title" placeholder="Title"  >
+      <input type="text" name="Artist" #Artist="ngModel" [(ngModel)]="songService.selectedSong.Artist" placeholder="Artist"  >
+      <input type="text" name="Album" #Album="ngModel" [(ngModel)]="songService.selectedSong.Album" placeholder="Album"  >
+      <input type="text" name="Year" #Year="ngModel" [(ngModel)]="songService.selectedSong.Year" placeholder="Year"  >
+      <input type="text" name="Reserve" #Reserve="ngModel" [(ngModel)]="songService.selectedSong.Reserve" placeholder="Reserve"  >
+      <input type="text" name="Track" #Track="ngModel" [(ngModel)]="songService.selectedSong.Track" placeholder="Track"  >
+      <input type="text" name="Genre" #Genre="ngModel" [(ngModel)]="songService.selectedSong.Genre" placeholder="Genre"  >
+      <input type="text" name="Comment" #Comment="ngModel" [(ngModel)]="songService.selectedSong.Comment" placeholder="Comment"  >
+    <input type="submit" value="Create">
+  </form>
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+  <div class="success" *ngIf="showSucessMessage">
+      {{showSucessMessage}}
+ </div>
+<!-- <router-outlet></router-outlet> -->
+  <!-- Error message -->

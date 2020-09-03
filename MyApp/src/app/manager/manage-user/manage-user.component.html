@@ -1,0 +1,28 @@
+<p *ngIf="us">You ara not Manager</p>
+<div *ngIf="mag">
+        <button (click)="get()">Getalluser</button>
+</div>
+<div class="success" *ngIf="allu">
+        <ul *ngFor="let index of this.allu;let i=index">
+            <li>Playlist Name : {{allu[i].email}} 
+           
+     
+            </li>
+            <li>Song name: {{allu[i].type}} </li>
+         
+         
+                    <li>
+                     
+                        <button (click)="mage(i)"> update to Manager</button>
+                        <button (click)="deact(i)">update to deactivated</button>
+                        <button (click)="user(i)">update to user</button>
+                    </li>       
+                </ul>
+    
+    
+    
+    </div>
+    <div class="success" *ngIf="showSucessMessage">
+            {{showSucessMessage}}
+          </div>
+      

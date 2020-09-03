@@ -1,0 +1,75 @@
+
+<div class="success" *ngIf="songDetails">
+    <ul *ngFor="let index of this.songDetails;let i=index">
+        <li>Name : {{songDetails[i].Title}} Rate : {{songDetails[i].AvRate}} <button (click)="getdetail(i)">showall</button>
+            <!-- <button (click)="addRate(i)">addRate</button> -->
+            <button (click)="addReview(i)" *ngIf="log">addReview</button>
+            <button (click)="addplay(i)" *ngIf="log">addToPlaylist</button>
+
+            <div *ngIf="detail[i]">
+              <p>Header : {{songDetails[i].Header}}</p>
+              <p>Album : {{songDetails[i].Album}}</p>
+               <p>Year: {{songDetails[i].AvRate}}</p>
+               <p>Title : {{songDetails[i].Title}}</p>
+               <p>Most Recent Comment :{{songDetails[i].Comment}}<button (click)="getcomm(i)">ViewAll comment</button></p>
+               
+               <p>Reserve : {{songDetails[i].Reserve}}</p>
+               <p>AvRate : {{songDetails[i].AvRate}}</p>
+               <p>NumRate : {{songDetails[i].NumRate}}</p>
+            </div>
+
+
+        
+         
+            <div *ngIf="review[i]">
+                        Select Rate:  <select id="rate">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                    </select>
+                        <!-- <input type="text"[(ngModel)]="reviewService.selectedReview.Comment" name="comment" placeholder="Write Comment"> --> 
+                        <input type="text" id ="com" placeholder="Write Comment">
+                        
+                        <div class="success" *ngIf="showSucessMessage">
+                                {{showSucessMessage}}
+                              </div>
+
+                        <div class="alert" *ngIf="serverErrorMessages">
+                                {{serverErrorMessages}}
+                           </div>
+                        <button (click)="addFeedback(i)">Feedback</button>
+            </div>        
+        </li>
+    </ul>
+
+   
+
+</div>
+
+
+
+<div class="success" *ngIf="gan">
+         
+        <li *ngFor="let index of this.viewcom;let j=index">
+            
+            <p>SongName:{{viewcom[j].SongN}} Comment : {{viewcom[j].Comment}} Time : {{viewcom[j].Time}}
+                    ReviewN : {{viewcom[j].ReviewN}}  Rating : {{viewcom[j].Rating}} </p>
+        </li>
+       
+</div>
+
+
+<div class="success" *ngIf="show">
+        <li *ngFor="let index of this.playlistDetails;let j=index">
+            PlatlistName : {{playlistDetails[j].playlistN}}   -- SongName : {{playlistDetails[j].songN}}  <button (click)="addtoplay(j)">addThisOne</button>
+        </li>
+        <div class="success" *ngIf="showSucessMessage">
+                {{showSucessMessage}}
+           </div>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
+

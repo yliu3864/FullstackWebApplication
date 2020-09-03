@@ -1,0 +1,28 @@
+<form>
+   
+
+        <input type="text" id ="com" placeholder="Write playlist name">
+        <button (click)="Search()">Search</button>
+        <div  *ngIf="playlistDetails">
+                <ul *ngFor="let index of this.playlistDetails;let i=index">
+                    <li>Playlist Name : {{playlistDetails[i].playlistN}} 
+                   
+                    </li>
+                    <li>
+                            Song name: {{playlistDetails[i].songN}}  
+                    </li>
+                    <li>
+                            status : {{playlistDetails[i].status}} 
+                    </li>
+                    <li>
+                            descript : {{playlistDetails[i].descript}} 
+                    </li>
+                </ul>
+            
+            
+            
+            </div>
+            <div class="alert" *ngIf="serverErrorMessages">
+                {{serverErrorMessages}}
+                </div>
+        </form>

@@ -1,0 +1,63 @@
+<br>
+<br>
+
+     
+<button (click)="get()" >get</button>
+<div class="success" *ngIf="playlistDetails">
+    <ul *ngFor="let index of this.playlistDetails;let i=index">
+        <li>Playlist Name : {{playlistDetails[i].playlistN}} 
+                <button (click)="changetitle(i)"> changetitle</button>
+ 
+        </li>
+        <li>
+                Song name: {{playlistDetails[i].songN}} 
+                <button (click)="delectsong(i)">Delect Song</button>
+              
+        </li>
+        <li>descript : {{playlistDetails[i].descript}} 
+                
+                <button (click)="changedescript(i)"> changedescript</button>
+ 
+            </li>
+            <li>status : {{playlistDetails[i].status}} 
+                
+                    <button (click)="changest(i)"> changestatus</button>
+     
+                </li>
+     
+    </ul>
+
+
+
+</div>
+<div class="success" *ngIf="showSucessMessage">
+        {{showSucessMessage}}
+   </div>
+<div class="success" *ngIf="show">
+        <li *ngFor="let index of this.temp;let j=index">
+           {{temp[j]}}  <button (click)="delecttoplay(j)">delectThisOne</button>
+        </li>
+        <div class="success" *ngIf="showSucessMessage">
+                {{showSucessMessage}}
+           </div>
+</div>
+<div class="success" *ngIf="des">
+        <input type="text" id ="com" placeholder="Write changedescript ">
+        
+       <button (click)="changedes(j)">Submit</button>
+  
+        <div class="success" *ngIf="showSucessMessage">
+                {{showSucessMessage}}
+           </div>
+</div>
+<div class="success" *ngIf="tit">
+        <input type="text" id ="tt" placeholder="Write changede title ">
+        
+       <button (click)="changetit(j)">Submit</button>
+  
+        <div class="success" *ngIf="showSucessMessage">
+                {{showSucessMessage}}
+           </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
+

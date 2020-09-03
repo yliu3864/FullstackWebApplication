@@ -1,0 +1,24 @@
+<form *ngIf="log">
+   
+
+<input type="text" id ="com" placeholder="Write playlist name">
+<input type="text" id ="des" placeholder="Write description(optional)">
+
+ <select id="rate">
+    <option value="0">Private</option>
+    <option value="1">Public</option>
+   
+        </select>
+  <button (click)="Create()">Create</button>
+        
+  <div class="success" *ngIf="showSucessMessage">
+      {{showSucessMessage}}
+    </div>
+
+<div class="alert" *ngIf="serverErrorMessages">
+      {{serverErrorMessages}}
+ </div>
+      </form>
+    <!-- <router-outlet></router-outlet> -->
+      <!-- Error message -->
+    

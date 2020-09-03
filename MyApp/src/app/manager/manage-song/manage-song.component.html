@@ -1,0 +1,27 @@
+<p *ngIf="us">You ara not Manager</p>
+<div *ngIf="mag">
+        <button (click)="get()">Getallsong</button>
+</div>
+<div class="success" *ngIf="songDetails">
+        <ul *ngFor="let index of this.songDetails;let i=index">
+            <li>Song Name : {{songDetails[i].Title}} 
+           
+     
+            </li>
+            <li>Song type: {{songDetails[i].type}} </li>
+         
+      
+                    <li>
+                     
+                            <button (click)="change(i)">change type</button>
+                          
+                    </li>       
+                </ul>
+    
+    
+    
+    </div>
+    <div class="success" *ngIf="showSucessMessage">
+            {{showSucessMessage}}
+          </div>
+      
